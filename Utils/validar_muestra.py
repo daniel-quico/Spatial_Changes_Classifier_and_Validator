@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from Utils.imprimir_mensajes import log_message
 from Utils.operaciones_descriptivas import obtener_matriz_confusion
 from Utils.descargar_resultados import descargar_matriz
-from Utils.herramientas_ui import obtener_nombre_valido
+from Utils.terminal_utils import obtener_nombre_valido
 def validar_clasificacion(resultado: dict, muestra: dict):
     nombre_validacion= obtener_nombre_valido(f"Escribe el 'nombre' que se le asignará a los resultados de validación entre muestra y resultado clasificado "
                                                         f"[objeto]_[nombre].[csv]: ")
