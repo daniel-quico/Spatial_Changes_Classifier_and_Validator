@@ -65,13 +65,13 @@ Spatial_Changes_Classifier_and_Validator/
 │   ├── calculo_umbral_EC.py
 │   ├── comparacion_capas.py
 │   ├── descargar_resultados.py
-│   ├── terminal_utils.py
 │   ├── imprimir_mensajes.py
 │   ├── lectura_formato.py
 │   ├── leer_archivos_csv.py
 │   ├── leer_capas.py
 │   ├── operaciones_descriptivas.py
 │   ├── operaciones_espaciales.py
+│   ├── terminal_utils.py
 │   └── validar_muestra
 └── README.md
 ```
