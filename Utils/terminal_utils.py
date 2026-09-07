@@ -7,7 +7,7 @@
 - establecer_umbral(msj, minimo, maximo)
 - obtener_nombre_valido(msj)
 
-CÓDIGO DE ELABORACIÓN PROPIA: la lógica de negocio e influencia en el uso de otras herramientas para la UI, para 
+CÓDIGO DE ELABORACIÓN PROPIA: de la lógica de negocio. E influencia en el uso de otras herramientas para la interacción del usuario con la terminal. Para 
 ello se adaptó al uso de librerías en relación a ello: InquirerPy y pathvalidate
 """
 
