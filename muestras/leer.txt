@@ -1,0 +1,2 @@
+AVISOS:
+Se recomienda tener esta carpeta solo con archivos CSV con el muestreo realizado con "ID_[B]", "ID_[A]", "relacion" como atributos y en ese orden.

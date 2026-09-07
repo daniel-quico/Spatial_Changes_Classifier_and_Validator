@@ -1,0 +1,2 @@
+RECOMENDACIONES:
+Tener los ficheros en esta misma carpeta, no crear subcarpetas para separar cada capa.
