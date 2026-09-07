@@ -87,10 +87,12 @@ def comprobar_compatibilidad_tablas(df_resultado: pd.DataFrame, df_muestra: pd.D
         # Contamos cuántas parejas no se encontraron
         parejas_no_halladas = idx_muestra[~parejas_en_resultado]
         num_no_halladas = len(parejas_no_halladas)
+        print(f"\n[ADVERTENCIA] Pares de IDs en conflicto ({cols_unicas}):")
+        print(parejas_no_halladas.tolist())
         return False, cols_unicas, f"Hay {num_no_halladas} parejas de IDs en la muestra que no existen en el resultado.", "e"
     
     return True, cols_unicas, "Compatibilidad entre muestra y resultado. Validando...", None
-       
+
 # FUNCIONES QUE SE USAN EN validar_muestra.py
 def obtener_matriz_confusion(df_resultado: pd.DataFrame, df_muestra: pd.DataFrame):
     proceder, cols_ids, msj, modo_msj = comprobar_compatibilidad_tablas(df_resultado, df_muestra)
