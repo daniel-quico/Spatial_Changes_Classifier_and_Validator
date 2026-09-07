@@ -1,6 +1,6 @@
 """Este módulo sigue los siguientes pasos:
-- Establecimiento de umbrales (thresholds), apoyándose en ***herramientas_ui.py*** para los coeficientes de igualdad, within, contain e intersección (por el momento, un nuevo desarrollo añadirá nuevos umbrales para extender la herramienta a elementos lineales, dimensión 1).
-- Solicitud de un nombre válido para los archivos y subcarpetas a generar en ***resultados_clasificacion/***. Apoyándose en ***herramientas_ui.py***.
+- Establecimiento de umbrales (thresholds), apoyándose en ***terminal_utils.py*** para los coeficientes de igualdad, within, contain e intersección (por el momento, un nuevo desarrollo añadirá nuevos umbrales para extender la herramienta a elementos lineales, dimensión 1).
+- Solicitud de un nombre válido para los archivos y subcarpetas a generar en ***resultados_clasificacion/***. Apoyándose en ***terminal_utils.py***.
 - Tratamiento de las capas disponibles según la configuración realizada en ***leer_capas.py***. Se apoya en ***operaciones_espaciales.py***.
 - Normalización de la medida que servirá para el cálculo de los coeficientes. En caso de ser una comparación puramente geométrica se generan IDs automáticos para poder identificar cómo se relaciona cada geometría.
 
@@ -16,7 +16,7 @@ from tqdm import tqdm
 from Config.consts import tipos_umbrales, tipos_umbrales_L, umbrales
 from Utils.imprimir_mensajes import mostrar_info, log_message
 from Utils.operaciones_espaciales import descartar_comparacion, tratar_capas, comparar_capas_pares
-from Utils.herramientas_ui import establecer_umbral, obtener_nombre_valido
+from Utils.terminal_utils import establecer_umbral, obtener_nombre_valido
 from Utils.descargar_resultados import descargar_gdf_resultados, descargar_tablas_secundarias, descargar_reporte, descargar_umbrales
 
 def comparar_capas(capas: dict, dim: int):
