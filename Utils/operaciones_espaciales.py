@@ -232,7 +232,7 @@ def calcular_coeficientes(sub_gdf_con_relacion: gpd.GeoDataFrame, gdf_A: gpd.Geo
     """
     idx_A = sub_gdf_con_relacion["index_A"].astype(int).values
     geom_A = gpd.GeoSeries(gdf_A.loc[idx_A]["geometry"].values, index=sub_gdf_con_relacion.index)
-    area_A = gdf_A.iloc[idx_A]["Shape_Area"].values
+    area_A = gdf_A.loc[idx_A]["Shape_Area"].values
     
     geom_B = sub_gdf_con_relacion["geometry"]
     area_B = sub_gdf_con_relacion["Shape_Area_B"]
@@ -283,9 +283,9 @@ def asignar_relacion_rcc8(sub_gdf_con_relacion: gpd.GeoDataFrame, gdf_A:gpd.GeoD
         (sub_gdf_con_relacion['coef_igualdad'] >= umbrales['igualdad']) & es_mismo_id,  # EVOLUTIVO: Comparar con los vecinos que intersecan con la misma geom_A para cada EQ_2 si ha habido una relación diferente a un PO bajo, a otro EQ y a EC en sus vecinos, para ya no evaluar el IoU, sino los otros coeficientes
         (sub_gdf_con_relacion['coef_igualdad'] >= umbrales['igualdad']) & (~es_mismo_id),
         # TPP/NTPP: Fusión / A Contenido en B
-        sub_gdf_con_relacion['coef_contain'] >= umbrales['contain'],
+        (sub_gdf_con_relacion['coef_contain'] >= umbrales['contain']) & (sub_gdf_con_relacion['coef_contain'] > sub_gdf_con_relacion['coef_within']),
         # TPPi/NTPPi: Segregación / A Contiene a B
-        sub_gdf_con_relacion['coef_within'] >= umbrales['within'],
+        (sub_gdf_con_relacion['coef_within'] >= umbrales['within']) & (sub_gdf_con_relacion['coef_within'] > sub_gdf_con_relacion['coef_contain']),
         # PO: Solape parcial significativo
         sub_gdf_con_relacion['coef_interseccion'] >= umbrales['interseccion'],
         # EC: Colindancia entre A y B siendo de mismo ID (esto es muy raro que pase) 
