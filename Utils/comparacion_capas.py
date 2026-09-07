@@ -1,5 +1,5 @@
 """Este módulo sigue los siguientes pasos:
-- Establecimiento de umbrales (thresholds), apoyándose en ***terminal_utils.py*** para los coeficientes de igualdad, within, contain e intersección (por el momento, un nuevo desarrollo añadirá nuevos umbrales para extender la herramienta a elementos lineales, dimensión 1).
+- Establecimiento de umbrales (thresholds), apoyándose en ***terminal_utils.py*** para los umbrales de igualdad, within, contain e intersección (por el momento, un nuevo desarrollo añadirá nuevos umbrales para extender la herramienta a elementos lineales, dimensión 1).
 - Solicitud de un nombre válido para los archivos y subcarpetas a generar en ***resultados_clasificacion/***. Apoyándose en ***terminal_utils.py***.
 - Tratamiento de las capas disponibles según la configuración realizada en ***leer_capas.py***. Se apoya en ***operaciones_espaciales.py***.
 - Normalización de la medida que servirá para el cálculo de los coeficientes. En caso de ser una comparación puramente geométrica se generan IDs automáticos para poder identificar cómo se relaciona cada geometría.
