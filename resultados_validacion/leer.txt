@@ -1,0 +1,3 @@
+AVISO:
+Resultados del proceso de validacion.py.
+Las columnas corresponden a las relaciones del Resultado clasificado. Mientras que las filas corresponden a las relaciones de la Muestra.

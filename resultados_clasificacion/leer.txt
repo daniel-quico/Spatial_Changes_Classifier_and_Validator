@@ -1,0 +1,2 @@
+AVISO:
+En esta carpeta resultan los resultados de ejecutar el proceso comparacion.py. Se recomienda tener una carpeta fuera del proyecto donde se guarden diferentes ejecuciones del proceso.
