@@ -3,7 +3,7 @@
 DataFrame.
 - Después se trata con cada tabla para obtener cuantos CSVs fueron válidos en la lectura. En caso de no disponer de mínimo uno de los dos ficheros (CSV de muestra o de resultado) se interrumpe el programa.  
 - Dado el caso de éxito, se muestra al usuario cuál de los archivos disponibles para cada tipo (muestra y resultado) quiere usar para la validación.
-CÓDIGO DE ELABORACIÓN PROPIA: Influenciado en las prácticas y uso de helpers e interacción con el usuario.
+CÓDIGO DE ELABORACIÓN PROPIA: Influenciado en las prácticas y uso de helpers e interacción con el usuario en terminal.
 
 """
 
@@ -16,7 +16,7 @@ from Utils.imprimir_mensajes import log_message
 from Utils.lectura_formato import leer_formatos, establecer_epsg_tratamiento
 from Utils.operaciones_espaciales import analizar_dimensiones_capas
 from Utils.operaciones_descriptivas import verificar_atributo_comun, renombrar_atributo_interes
-from Utils.herramientas_ui import pedir_confirmacion, escoger_dimension, seleccionar_orden_capas, gestionar_capas_sin_atr_interes
+from Utils.terminal_utils import pedir_confirmacion, escoger_dimension, seleccionar_orden_capas, gestionar_capas_sin_atr_interes
 
 def escanear() -> dict:
     """Función que escanea el directorio **capas/** para cargar las capas como geodataframes
