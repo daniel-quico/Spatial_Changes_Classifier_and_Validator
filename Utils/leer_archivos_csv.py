@@ -1,6 +1,6 @@
 """Módulo para leer los archivos correspondientes a la muestra y al resultado de clasificación:
     - escanear(es_resultado):  
-        **ELABORACIÓN PROPIA** (influenciada en experiencias propias) en la lógica de desarrollo UI  
+        **ELABORACIÓN PROPIA** (influenciada en experiencias propias) en la lógica de escoger archivos apoyándose en terminal_utils  
         **CÓDIGO ADAPTADO (os.walk() in Python):** https://www.geeksforgeeks.org/python/os-walk-python/  
     - analizar_muestras_resultados():
         **ELABORACIÓN PROPIA** en la lógica de desarrollo UI.
@@ -12,7 +12,7 @@ import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from Config.consts import directorio_muestras, directorio_resultados
-from Utils.herramientas_ui import escoger_archivo
+from Utils.terminal_utils import escoger_archivo
 from Utils.imprimir_mensajes import log_message
 from Utils.lectura_formato import leer_formatos
     
