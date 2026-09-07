@@ -65,7 +65,7 @@ Spatial_Changes_Classifier_and_Validator/
 │   ├── calculo_umbral_EC.py
 │   ├── comparacion_capas.py
 │   ├── descargar_resultados.py
-│   ├── herramientas_ui.py
+│   ├── terminal_utils.py
 │   ├── imprimir_mensajes.py
 │   ├── lectura_formato.py
 │   ├── leer_archivos_csv.py
@@ -130,8 +130,8 @@ En el caso de tratar con un GeoDataFrame puede establecer, cambiar de CRS al ele
 
 #### Utils/comparacion_capas.py
 Este módulo sigue los siguientes pasos:
-- Establecimiento de umbrales (thresholds), apoyándose en ***herramientas_ui.py*** para los coeficientes de igualdad, within, contain e intersección (por el momento, un nuevo desarrollo añadirá nuevos umbrales para extender la herramienta a elementos lineales, dimensión 1).
-- Solicitud de un nombre válido para los archivos y subcarpetas a generar en ***resultados_clasificacion/***. Apoyándose en ***herramientas_ui.py***.
+- Establecimiento de umbrales (thresholds), apoyándose en ***terminal_utils.py*** para los coeficientes de igualdad, within, contain e intersección (por el momento, un nuevo desarrollo añadirá nuevos umbrales para extender la herramienta a elementos lineales, dimensión 1).
+- Solicitud de un nombre válido para los archivos y subcarpetas a generar en ***resultados_clasificacion/***. Apoyándose en ***terminal_utils.py***.
 - Tratamiento de las capas disponibles según la configuración realizada en ***leer_capas.py***. Se apoya en ***operaciones_espaciales.py***.
 - Normalización de la medida que servirá para el cálculo de los coeficientes. En caso de ser una comparación puramente geométrica se generan IDs automáticos para poder identificar cómo se relaciona cada geometría. Se apoya en ***operaciones_espaciales.py***.
 
@@ -141,7 +141,7 @@ Una vez normalizados, se procede a iterar el *dataset* en un bucle analizando i 
 - Descarga de los archivos mencionados si hubieron capas con relaciones. En caso de que ninguna tuviese relación con otra, N-1 mensajes de error en pantalla.
 #### Utils/validar_muestra.py
 Este módulo sigue los siguientes pasos:
-- Solicitud de un nombre válido para la generación de un archivo CSV, correspondiente a una matriz de confusión. Apoyándose en ***herramientas_ui.py***.
+- Solicitud de un nombre válido para la generación de un archivo CSV, correspondiente a una matriz de confusión. Apoyándose en ***terminal_utils.py***.
 - Comprobación de compatibilidad entre tablas muestra y resultado. Manejando los posibles errores al imprimirlos en pantalla e interrumpir el proceso si hay incompatibilidad.
 - Obtención de una tabla cruzada y matriz de confusión. En caso de que si haya compatibilidad y la muestra sea un subconjunto del resultado. En este paso y el anterior se apoya en ***operaciones_descriptivas.py***
 - Impresión en pantalla de las métricas de evaluación de la clasificación y descarga de la matriz de confusión
@@ -159,7 +159,7 @@ Módulo dónde se encuentra la lógica de negocio principalmente descriptiva que
 - Verificación de que existe el atributo de interés dado por el usuario en el *dataset* completo. Y en caso de ser así se renombra a "ID": *verificar_atributo_comun* y *renombrar_atributo_interes*.
 - Agrupación de descripciones por tipo de relación para generar la capa de relaciones de cada geometría 1-N: *agrupar_descripciones*, *ordenar_por_tipo*
 - Analiza la compatibilidad entre tabla de Muestra y Resultado y devuelve una Matriz de Confusión si no hay errores: *comprobar_compatibilidad_tablas* y *obtener_matriz_confusion*
-#### Utils/herramientas_ui.py
+#### Utils/terminal_utils.py
 Módulo para interacciones con el usuario en su configuración:
 - pedir_confirmacion(msj): muestra un mensaje y espera una respuesta para procesar un retorno booleano
 - escoger_dimension(): muestra al usuario opciones a elegir de dimensión
