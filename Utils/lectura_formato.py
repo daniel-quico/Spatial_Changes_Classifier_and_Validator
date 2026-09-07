@@ -24,7 +24,7 @@ from pyproj import CRS
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from Config.consts import directorio_capas, formato_input, col_validacion
 from Utils.imprimir_mensajes import log_message
-from Utils.herramientas_ui import pedir_confirmacion
+from Utils.terminal_utils import pedir_confirmacion
 
 def establecer_epsg_tratamiento(msg:str = "") -> CRS:
     while True:
